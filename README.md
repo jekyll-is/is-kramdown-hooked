@@ -3,6 +3,11 @@
 
 # is-kramdown-hooked
 
+[![GitHub License](https://img.shields.io/github/license/jekyll-is/is-kramdown-hooked)](LICENSE)
+[![Gem Version](https://badge.fury.io/rb/is-kramdown-hooked.svg?icon=si%3Arubygems)](https://badge.fury.io/rb/is-kramdown-hooked)
+[![Ruby](https://github.com/jekyll-is/is-kramdown-hooked/actions/workflows/ruby.yml/badge.svg)](https://github.com/jekyll-is/is-kramdown-hooked/actions/workflows/ruby.yml)
+![Coverage](coverage-badge.svg)
+
 Extensible Kramdown parser with inner hooks for enhanced Markdown processing in Jekyll
 
 ## About
