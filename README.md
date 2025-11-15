@@ -8,7 +8,7 @@
 [![Ruby](https://github.com/jekyll-is/is-kramdown-hooked/actions/workflows/ruby.yml/badge.svg)](https://github.com/jekyll-is/is-kramdown-hooked/actions/workflows/ruby.yml)
 ![Coverage](coverage-badge.svg)
 
-Extensible Kramdown parser with inner hooks for enhanced Markdown processing in Jekyll
+Extensible Kramdown parser with inner hooks for enhanced Markdown processing in Jekyll.
 
 ## About
 
