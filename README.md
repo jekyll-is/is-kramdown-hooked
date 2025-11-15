@@ -19,13 +19,13 @@ is-kramdown-hooked is a flexible Ruby gem that extends the standard Kramdown Mar
 
 Add this line to your Jekyll site's `Gemfile` or any Ruby project's Gemfile:
 
-```
+```ruby
 gem 'is-kramdown-hooked', '~> 0.8.0'
 ```
 
 Then run:
 
-```
+```shell
 bundle install
 ```
 
@@ -33,7 +33,7 @@ bundle install
 
 Register a post-parse hook in your Ruby code:
 
-```
+```ruby
 Kramdown::Parser::ISKram.register_post_parse_hook do |parser|
   # Custom AST processing logic here
   # Example: modify parser.root to transform Markdown nodes
@@ -57,7 +57,7 @@ This will run your hook after the default Kramdown parsing, allowing customized 
 
 To run the test suite, clone the repository and execute:
 
-```
+```shell
 bundle exec rake
 ```
 
