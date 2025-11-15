@@ -1,3 +1,6 @@
+| **EN** | [ru](README-ru.md) |
+|----------|----------|
+
 # is-kramdown-hooked
 
 Extensible Kramdown parser with inner hooks for enhanced Markdown processing in Jekyll
