@@ -10,6 +10,10 @@
 
 Extensible Kramdown parser with inner hooks for enhanced Markdown processing in Jekyll.
 
+## Version
+
++ **0.8.0** — pre-release.
+
 ## About
 
 is-kramdown-hooked is a flexible Ruby gem that extends the standard Kramdown Markdown parser by adding customizable post-parse hooks. These hooks enable developers to inject custom processing steps on the Abstract Syntax Tree (AST) after the default parsing, allowing for advanced Markdown manipulation and seamless integration into Jekyll sites or other Ruby projects using Kramdown.
