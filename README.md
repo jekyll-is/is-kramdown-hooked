@@ -12,7 +12,7 @@ Extensible Kramdown parser with inner hooks for enhanced Markdown processing in 
 
 ## Version
 
-+ **0.8.0** — pre-release.
++ **0.8.x** — pre-release.
 
 ## About
 
@@ -32,7 +32,7 @@ is-kramdown-hooked is a flexible Ruby gem that extends the standard Kramdown Mar
 Add this line to your Jekyll site's `Gemfile` or any Ruby project's Gemfile:
 
 ```ruby
-gem 'is-kramdown-hooked', '~> 0.8.0'
+gem 'is-kramdown-hooked', '~> 0.8.2'
 ```
 
 Then run:
