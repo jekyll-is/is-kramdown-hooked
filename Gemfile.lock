@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    is-kramdown-hooked (0.8.0)
+    is-kramdown-hooked (0.8.2)
       kramdown (~> 2.5)
 
 GEM

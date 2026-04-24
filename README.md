@@ -81,7 +81,7 @@ Contributions are welcome. Please fork the repository and submit pull requests w
 
 ## License
 
-This project is licensed under the GPL-3.0-or-later license.
+This project is licensed under the LGPL-3.0-or-later license.
 
 ## Links
 
