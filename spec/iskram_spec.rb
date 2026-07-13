@@ -431,5 +431,15 @@ RSpec.describe Kramdown::Parser::ISKram do
       puts "IMG attrs: #{img_attrs.inspect}"
       puts "IAL captured: #{ial_captured.inspect}"
     end
+
+    it 'Elements hook' do
+      attrs = nil
+      described_class.register_ast_element_hook :img do |parent, child, index|
+        attrs = child.attr.dup
+      end
+      Kramdown::Document.new('![Alt text](path/to/image.jpg){: .test-class #myid width="800" }', input: "ISKram")
+      expect(attrs['id']).to eq('myid')
+    end
+
   end
 end
