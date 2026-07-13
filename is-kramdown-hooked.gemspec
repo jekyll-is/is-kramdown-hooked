@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = "is-kramdown-hooked"
-  s.version     = "0.8.2"
+  s.version     = "0.8.4"
   s.summary     = "Extensible Kramdown parser with inner hooks"
   s.description = "Flexible Jekyll plugin gem that extends Kramdown Markdown parser with customizable AST hooks, enabling enhanced Markdown processing and seamless integration within Jekyll sites."
   s.authors     = ["Ivan Shikhalev"]
