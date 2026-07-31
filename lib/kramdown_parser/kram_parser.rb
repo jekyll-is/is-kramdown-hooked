@@ -8,9 +8,17 @@ class Kramdown::Parser::ISKram < Kramdown::Parser::Kramdown
     def register_post_parse_hook &hook
       @hooks ||= []
       @hooks << hook
+      hook
+    end
+
+    def unregister_post_parse_hook hook
+      if @hooks
+        @hooks.delete hook
+      end
     end
 
     def trigger_post_parse_hooks parser
+      return if @hooks.nil? || @hooks.empty?
       @hooks.each do |hook|
         hook.call parser
       end
@@ -19,23 +27,32 @@ class Kramdown::Parser::ISKram < Kramdown::Parser::Kramdown
     def register_ast_element_hook *elements, &hook
       @element_hooks ||= []
       @element_hooks << { elements: elements, hook: hook }
+      hook
+    end
+
+    def unregister_ast_element_hook hook
+      if @element_hooks
+        @element_hooks.delete_if { |rec| rec[:hook] == hook }
+      end
     end
 
     def trigger_ast_elements_hooks parser
       return if @element_hooks.nil? || @element_hooks.empty?
-      traverse = lambda do |elem|
-        elem.children.each_with_index do |child, index|
+      traverse = lambda do |path|
+        elem = path.last
+        pp elem
+        elem.children.each do |child|
           handled = false
           @element_hooks.each do |hook|
             if hook[:elements].include?(child.type)
-              hooked = hook[:hook].call elem, child, index
+              hooked = hook[:hook].call path, child
               handled ||= hooked
             end
           end
-          traverse.call child unless handled
+          traverse.call(path + [child]) unless handled
         end
       end
-      traverse.call parser.root
+      traverse.call([parser.root])
     end
 
   end

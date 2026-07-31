@@ -416,6 +416,7 @@ RSpec.describe Kramdown::Parser::ISKram do
           next unless child.type == :p
 
           child.children.each do |inline|
+            pp inline
             if inline.type == :img
               img_attrs = inline.attr.dup
             end
@@ -426,7 +427,7 @@ RSpec.describe Kramdown::Parser::ISKram do
         end
       end
 
-      Kramdown::Document.new('![Alt text](path/to/image.jpg){: .test-class #myid width="800" }', input: "ISKram")
+      Kramdown::Document.new('![Alt text](path/to/image.jpg){: .test-class #myid width="800" height="200px" figure=true x=100 }', input: "ISKram")
 
       puts "IMG attrs: #{img_attrs.inspect}"
       puts "IAL captured: #{ial_captured.inspect}"
@@ -434,7 +435,7 @@ RSpec.describe Kramdown::Parser::ISKram do
 
     it 'Elements hook' do
       attrs = nil
-      described_class.register_ast_element_hook :img do |parent, child, index|
+      described_class.register_ast_element_hook :img do |path, child, index|
         attrs = child.attr.dup
       end
       Kramdown::Document.new('![Alt text](path/to/image.jpg){: .test-class #myid width="800" }', input: "ISKram")
